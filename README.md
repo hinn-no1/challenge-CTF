@@ -1,1 +1,1 @@
-# challenge-CTF
+# CTF-challenge
