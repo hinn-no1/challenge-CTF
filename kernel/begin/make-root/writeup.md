@@ -2,13 +2,13 @@
 
 Sau khi git clone môi trường các challenge của pwn.college về mình đã giải bài `make-root` đầu tiên
 
-![alt text](image.png)
+![alt text](image/image.png)
 
 đâu tiên thì chương trình cho mình file `launch.sh`, đây là file dùng để khởi động challenge này, đoạn mã của file thực hiện việc đóng gói thư mục `fs` thành initramfs, sau đó dùng QEMU để khởi động kernel linux
 
 khi khởi động, `/init` gắn `procfs` vào `/proc`, sau đó nạp modules `make_root.ko`
 
-![alt text](image-1.png)
+![alt text](image/image-1.png)
 
 Modules tạo một mục tên `/proc/pwn-college-root` để chương trình người dùng giao tiếp với kernel, vậy nên để có thể giao tiếp với modules này có thể viết
 ```C
@@ -16,7 +16,7 @@ int fd = open("/proc/pwn-college-root", 0);
 ```
 lúc này `open` sẽ trả về một file descriptor để có thể dùng để giao tiếp với modules của chương trình
 
-![alt text](image-2.png)
+![alt text](image/image-2.png)
 
 khi phân tích module của bài này, mình thấy là module đã cung cấp thao tác `ioctl` , khi mình gọi
 ```c
